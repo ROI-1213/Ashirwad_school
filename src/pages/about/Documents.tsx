@@ -3,17 +3,17 @@ import { Button } from "@/components/ui/button";
 
 const Documents = () => {
   const documents = [
-    { title: "Society Registration", href: "/documents/society-registration.pdf" },
-    { title: "Recognition Certificate", href: "/documents/recognition-certificate.pdf" },
-    { title: "Building Safety Certificate", href: "/documents/building-safety-certificate.pdf" },
-    { title: "Fire Safety Certificate", href: "/documents/fire-safety.pdf" },
-    { title: "Water Sanitation Certificate", href: "/documents/water-sanitation.pdf" },
-    { title: "Water Test Report", href: "/documents/water-test.pdf" },
-    { title: "PTA (Parent-Teacher Association)", href: "/documents/pta.pdf" },
-    { title: "SMC (School Management Committee)", href: "/documents/school-managing-committee.pdf" },
-    { title: "Fee Structure", href: "/documents/fee-structure.pdf" },
-    { title: "Self Certificate", href: "/documents/self-certification-proforma.pdf" },
-    { title: "Academic Calendar", href: "/documents/academic-calendar.pdf" },
+    { title: "Society Registration", href: "/documents/society-registration.pdf?v=20261012" },
+    { title: "Recognition Certificate", href: "/documents/recognition-certificate.pdf?v=20261012" },
+    { title: "Building Safety Certificate", href: "/documents/building-safety-certificate.pdf?v=20261012" },
+    { title: "Fire Safety Certificate", href: "/documents/fire-safety.pdf?v=20261012" },
+    { title: "Water Sanitation Certificate", href: "/documents/water-sanitation.pdf?v=20261012" },
+    { title: "Water Test Report", href: "/documents/water-test.pdf?v=20261012" },
+    { title: "PTA (Parent-Teacher Association)", href: "/documents/pta.pdf?v=20261012" },
+    { title: "SMC (School Management Committee)", href: "/documents/school-managing-committee.pdf?v=20261012" },
+    { title: "Fee Structure", href: "/documents/fee-structure.pdf?v=20261012" },
+    { title: "Self Certificate", href: "/documents/self-certification-proforma.pdf?v=20261012" },
+    { title: "Academic Calendar", href: "/documents/academic-calendar.pdf?v=20261012" },
   ];
 
   return (
