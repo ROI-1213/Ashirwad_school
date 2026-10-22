@@ -87,6 +87,7 @@ const App = () => (
             <Route path="/about/faculties" element={<OurFaculties />} />
             <Route path="/about/accreditation" element={<Accreditation />} />
             <Route path="/about/documents" element={<Documents />} />
+            <Route path="/mandatory-disclosure" element={<Documents />} />
             
             <Route path="/academics" element={<Academics />} />
             <Route path="/academics/school-curriculum" element={<SchoolCurriculum />} />

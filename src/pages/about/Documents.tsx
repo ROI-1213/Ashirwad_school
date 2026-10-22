@@ -20,7 +20,7 @@ const Documents = () => {
     <div className="flex flex-col min-h-screen">
       <section className="bg-gradient-to-r from-primary to-accent text-white py-20">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-5xl font-heading font-bold mb-4">Mandatory Documents</h1>
+          <h1 className="text-5xl font-heading font-bold mb-4">Mandatory Disclosure</h1>
           <div className="w-24 h-1.5 bg-white mx-auto rounded-full mb-6 opacity-80"></div>
           <p className="text-xl max-w-2xl mx-auto">Important mandatory public disclosures and school documents</p>
         </div>

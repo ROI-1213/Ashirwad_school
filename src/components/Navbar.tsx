@@ -26,8 +26,12 @@ const navigationItems = [
       { name: "Infrastructure & Facilities", href: "/about/infrastructure" },
       { name: "Our Faculties", href: "/about/faculties" },
       { name: "Accreditation & Affiliations", href: "/about/accreditation" },
-      { name: "Documents", href: "/about/documents" },
+      { name: "Documents", href: "/mandatory-disclosure" },
     ],
+  },
+  {
+    name: "Mandatory Disclosure",
+    href: "/mandatory-disclosure",
   },
   {
     name: "Academics",
@@ -162,13 +166,13 @@ const Navbar = () => {
 
           {/* Desktop Navigation */}
           <NavigationMenu className="hidden lg:flex">
-            <NavigationMenuList>
+            <NavigationMenuList className="gap-0.5 xl:gap-1">
               {navigationItems.map((item) =>
                 item.items ? (
                   <NavigationMenuItem key={item.name}>
                     <NavigationMenuTrigger
                       className={cn(
-                        "bg-transparent hover:bg-muted data-[state=open]:bg-muted transition-smooth",
+                        "bg-transparent hover:bg-muted data-[state=open]:bg-muted transition-smooth px-2.5 xl:px-4 text-xs xl:text-sm font-medium",
                         isActive(item.href) && "bg-primary/10 text-primary"
                       )}
                     >
@@ -225,7 +229,7 @@ const Navbar = () => {
                     <Link to={item.href}>
                       <NavigationMenuLink
                         className={cn(
-                          "group inline-flex h-10 w-max items-center justify-center rounded-md bg-transparent px-4 py-2 text-sm font-medium transition-smooth hover:bg-muted hover:text-accent-foreground focus:bg-muted focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50",
+                          "group inline-flex h-10 w-max items-center justify-center rounded-md bg-transparent px-2.5 xl:px-4 py-2 text-xs xl:text-sm font-medium transition-smooth hover:bg-muted hover:text-accent-foreground focus:bg-muted focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50",
                           isActive(item.href) && "bg-primary text-primary-foreground hover:bg-primary/90"
                         )}
                       >
