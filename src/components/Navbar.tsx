@@ -98,6 +98,7 @@ const navigationItems = [
   },
 ];
 
+// Main Navbar Component
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [expandedMobile, setExpandedMobile] = useState<string | null>(null);
