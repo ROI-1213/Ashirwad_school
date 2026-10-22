@@ -26,7 +26,6 @@ const navigationItems = [
       { name: "Infrastructure & Facilities", href: "/about/infrastructure" },
       { name: "Our Faculties", href: "/about/faculties" },
       { name: "Accreditation & Affiliations", href: "/about/accreditation" },
-      { name: "Documents", href: "/mandatory-disclosure" },
     ],
   },
   {
