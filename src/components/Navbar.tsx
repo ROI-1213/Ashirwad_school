@@ -30,10 +30,6 @@ const navigationItems = [
     ],
   },
   {
-    name: "Mandatory Disclosure",
-    href: "/mandatory-disclosure",
-  },
-  {
     name: "Academics",
     href: "/academics",
     items: [
@@ -92,6 +88,10 @@ const navigationItems = [
       { name: "Question Papers", href: "/resources/question-papers" },
       { name: "Library", href: "/resources/library" },
     ],
+  },
+  {
+    name: "Mandatory Disclosure",
+    href: "/mandatory-disclosure",
   },
   {
     name: "Contact Us",
@@ -157,14 +157,14 @@ const Navbar = () => {
       </div>
 
       {/* Main Navigation */}
-      <div className="w-full max-w-[1536px] mx-auto px-3 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 xl:h-20 gap-2">
+      <div className="w-full max-w-full px-2 sm:px-4 lg:px-4 xl:px-6 2xl:px-8">
+        <div className="flex items-center justify-between h-16 xl:h-20 gap-1 xl:gap-2">
           {/* Logo */}
-          <Link to="/" className="flex items-center flex-shrink-0 mr-2 xl:mr-4 group">
+          <Link to="/" className="flex items-center flex-shrink-0 mr-1 xl:mr-3 group">
             <img
               src={logo}
               alt="Ashirwad Global School & PU College"
-              className="h-12 sm:h-14 xl:h-16 w-auto object-contain flex-shrink-0 group-hover:scale-105 transition-smooth"
+              className="h-10 sm:h-12 xl:h-14 2xl:h-16 w-auto object-contain flex-shrink-0 group-hover:scale-105 transition-smooth"
             />
           </Link>
 
@@ -176,7 +176,7 @@ const Navbar = () => {
                   <NavigationMenuItem key={item.name} className="flex-shrink-0">
                     <NavigationMenuTrigger
                       className={cn(
-                        "bg-transparent hover:bg-muted data-[state=open]:bg-muted transition-smooth h-9 px-2 xl:px-2.5 2xl:px-3 text-[12px] xl:text-[13px] 2xl:text-sm font-medium whitespace-nowrap",
+                        "bg-transparent hover:bg-muted data-[state=open]:bg-muted transition-smooth h-8 xl:h-9 px-1.5 xl:px-2 2xl:px-2.5 text-[11px] xl:text-[12.5px] 2xl:text-[13.5px] font-medium whitespace-nowrap",
                         isActive(item.href) && "bg-primary/10 text-primary"
                       )}
                     >
@@ -233,7 +233,7 @@ const Navbar = () => {
                     <Link to={item.href}>
                       <NavigationMenuLink
                         className={cn(
-                          "group inline-flex h-9 w-max items-center justify-center rounded-md bg-transparent px-2 xl:px-2.5 2xl:px-3 text-[12px] xl:text-[13px] 2xl:text-sm font-medium transition-smooth hover:bg-muted hover:text-accent-foreground focus:bg-muted focus:text-accent-foreground focus:outline-none whitespace-nowrap",
+                          "group inline-flex h-8 xl:h-9 w-max items-center justify-center rounded-md bg-transparent px-1.5 xl:px-2 2xl:px-2.5 text-[11px] xl:text-[12.5px] 2xl:text-[13.5px] font-medium transition-smooth hover:bg-muted hover:text-accent-foreground focus:bg-muted focus:text-accent-foreground focus:outline-none whitespace-nowrap",
                           isActive(item.href) && "bg-primary text-primary-foreground hover:bg-primary/90"
                         )}
                       >
@@ -247,9 +247,9 @@ const Navbar = () => {
           </NavigationMenu>
 
           {/* Admissions CTA */}
-          <div className="hidden lg:block flex-shrink-0 ml-2">
+          <div className="hidden lg:flex items-center flex-shrink-0 ml-1 xl:ml-2">
             <Link to="/apply-online">
-              <Button size="sm" className="bg-accent hover:bg-accent/90 text-xs xl:text-sm px-3 xl:px-4 py-1.5 h-9 font-medium shadow-sm">
+              <Button size="sm" className="bg-accent hover:bg-accent/90 text-xs xl:text-sm px-2.5 xl:px-3.5 2xl:px-4 py-1.5 h-8 xl:h-9 font-semibold shadow-sm whitespace-nowrap">
                 Apply Now
               </Button>
             </Link>
