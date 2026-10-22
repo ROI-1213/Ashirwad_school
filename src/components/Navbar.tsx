@@ -114,7 +114,7 @@ const Navbar = () => {
     <nav className="sticky top-0 z-50 bg-card/95 backdrop-blur-sm border-b border-border shadow-sm">
       {/* Contact Info Bar */}
       <div className="bg-primary/5 border-b border-border/50">
-        <div className="container mx-auto px-4">
+        <div className="w-full max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-10">
             <div className="flex items-center gap-4">
               <a
@@ -157,22 +157,26 @@ const Navbar = () => {
       </div>
 
       {/* Main Navigation */}
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
+      <div className="w-full max-w-[1536px] mx-auto px-3 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-16 xl:h-20 gap-2">
           {/* Logo */}
-          <Link to="/" className="flex items-center group">
-            <img src={logo} alt="Ashirwad Global School & PU College" className="h-16 w-auto object-contain group-hover:scale-105 transition-smooth" />
+          <Link to="/" className="flex items-center flex-shrink-0 mr-2 xl:mr-4 group">
+            <img
+              src={logo}
+              alt="Ashirwad Global School & PU College"
+              className="h-12 sm:h-14 xl:h-16 w-auto object-contain flex-shrink-0 group-hover:scale-105 transition-smooth"
+            />
           </Link>
 
           {/* Desktop Navigation */}
-          <NavigationMenu className="hidden lg:flex">
-            <NavigationMenuList className="gap-0.5 xl:gap-1">
+          <NavigationMenu className="hidden lg:flex flex-1 justify-center max-w-full">
+            <NavigationMenuList className="flex items-center justify-center gap-0.5 xl:gap-1 2xl:gap-1.5 flex-nowrap">
               {navigationItems.map((item) =>
                 item.items ? (
-                  <NavigationMenuItem key={item.name}>
+                  <NavigationMenuItem key={item.name} className="flex-shrink-0">
                     <NavigationMenuTrigger
                       className={cn(
-                        "bg-transparent hover:bg-muted data-[state=open]:bg-muted transition-smooth px-2.5 xl:px-4 text-xs xl:text-sm font-medium",
+                        "bg-transparent hover:bg-muted data-[state=open]:bg-muted transition-smooth h-9 px-2 xl:px-2.5 2xl:px-3 text-[12px] xl:text-[13px] 2xl:text-sm font-medium whitespace-nowrap",
                         isActive(item.href) && "bg-primary/10 text-primary"
                       )}
                     >
@@ -225,11 +229,11 @@ const Navbar = () => {
                     </NavigationMenuContent>
                   </NavigationMenuItem>
                 ) : (
-                  <NavigationMenuItem key={item.name}>
+                  <NavigationMenuItem key={item.name} className="flex-shrink-0">
                     <Link to={item.href}>
                       <NavigationMenuLink
                         className={cn(
-                          "group inline-flex h-10 w-max items-center justify-center rounded-md bg-transparent px-2.5 xl:px-4 py-2 text-xs xl:text-sm font-medium transition-smooth hover:bg-muted hover:text-accent-foreground focus:bg-muted focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50",
+                          "group inline-flex h-9 w-max items-center justify-center rounded-md bg-transparent px-2 xl:px-2.5 2xl:px-3 text-[12px] xl:text-[13px] 2xl:text-sm font-medium transition-smooth hover:bg-muted hover:text-accent-foreground focus:bg-muted focus:text-accent-foreground focus:outline-none whitespace-nowrap",
                           isActive(item.href) && "bg-primary text-primary-foreground hover:bg-primary/90"
                         )}
                       >
@@ -243,9 +247,11 @@ const Navbar = () => {
           </NavigationMenu>
 
           {/* Admissions CTA */}
-          <div className="hidden lg:block">
+          <div className="hidden lg:block flex-shrink-0 ml-2">
             <Link to="/apply-online">
-              <Button className="bg-accent hover:bg-accent/90">Apply Now</Button>
+              <Button size="sm" className="bg-accent hover:bg-accent/90 text-xs xl:text-sm px-3 xl:px-4 py-1.5 h-9 font-medium shadow-sm">
+                Apply Now
+              </Button>
             </Link>
           </div>
 
