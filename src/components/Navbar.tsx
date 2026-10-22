@@ -175,7 +175,7 @@ const Navbar = () => {
                   <NavigationMenuItem key={item.name} className="flex-shrink-0">
                     <NavigationMenuTrigger
                       className={cn(
-                        "bg-transparent hover:bg-muted data-[state=open]:bg-muted transition-smooth h-8 xl:h-9 px-1.5 xl:px-2 2xl:px-2.5 text-[11px] xl:text-[12.5px] 2xl:text-[13.5px] font-medium whitespace-nowrap",
+                        "bg-transparent hover:bg-primary/10 hover:text-primary data-[state=open]:bg-primary/10 data-[state=open]:text-primary transition-smooth h-8 xl:h-9 px-1.5 xl:px-2 2xl:px-2.5 text-[11px] xl:text-[12.5px] 2xl:text-[13.5px] font-medium whitespace-nowrap",
                         isActive(item.href) && "bg-primary/10 text-primary"
                       )}
                     >
@@ -232,8 +232,8 @@ const Navbar = () => {
                     <Link to={item.href}>
                       <NavigationMenuLink
                         className={cn(
-                          "group inline-flex h-8 xl:h-9 w-max items-center justify-center rounded-md bg-transparent px-1.5 xl:px-2 2xl:px-2.5 text-[11px] xl:text-[12.5px] 2xl:text-[13.5px] font-medium transition-smooth hover:bg-muted hover:text-accent-foreground focus:bg-muted focus:text-accent-foreground focus:outline-none whitespace-nowrap",
-                          isActive(item.href) && "bg-primary text-primary-foreground hover:bg-primary/90"
+                          "group inline-flex h-8 xl:h-9 w-max items-center justify-center rounded-md bg-transparent px-1.5 xl:px-2 2xl:px-2.5 text-[11px] xl:text-[12.5px] 2xl:text-[13.5px] font-medium transition-smooth hover:bg-primary/10 hover:text-primary focus:bg-primary/10 focus:text-primary focus:outline-none whitespace-nowrap",
+                          isActive(item.href) && "bg-primary text-primary-foreground hover:bg-primary/90 hover:text-primary-foreground"
                         )}
                       >
                         {item.name}
