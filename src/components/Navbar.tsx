@@ -169,7 +169,7 @@ const Navbar = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <NavigationMenu className="hidden lg:flex flex-1 justify-center max-w-full">
+          <NavigationMenu className="hidden lg:flex flex-1 justify-center max-w-full" delayDuration={0} skipDelayDuration={0}>
             <NavigationMenuList className="flex items-center justify-center gap-0.5 xl:gap-1 2xl:gap-1.5 flex-nowrap">
               {navigationItems.map((item) =>
                 item.items ? (

@@ -8,9 +8,11 @@ import { cn } from "@/lib/utils";
 const NavigationMenu = React.forwardRef<
   React.ElementRef<typeof NavigationMenuPrimitive.Root>,
   React.ComponentPropsWithoutRef<typeof NavigationMenuPrimitive.Root>
->(({ className, children, ...props }, ref) => (
+>(({ className, children, delayDuration = 0, skipDelayDuration = 0, ...props }, ref) => (
   <NavigationMenuPrimitive.Root
     ref={ref}
+    delayDuration={delayDuration}
+    skipDelayDuration={skipDelayDuration}
     className={cn("relative z-10 flex max-w-max flex-1 items-center justify-center", className)}
     {...props}
   >
@@ -72,7 +74,7 @@ const NavigationMenuContent = React.forwardRef<
   <NavigationMenuPrimitive.Content
     ref={ref}
     className={cn(
-      "absolute top-full left-0 mt-1.5 z-50 rounded-md border bg-popover text-popover-foreground shadow-lg data-[motion^=from-]:animate-in data-[motion^=to-]:animate-out data-[motion^=from-]:fade-in data-[motion^=to-]:fade-out data-[motion^=from-]:zoom-in-95 data-[motion^=to-]:zoom-out-95",
+      "absolute top-full left-0 mt-1 z-50 rounded-md border bg-popover text-popover-foreground shadow-lg duration-100 data-[motion^=from-]:animate-in data-[motion^=to-]:animate-out data-[motion^=from-]:fade-in data-[motion^=to-]:fade-out",
       className,
     )}
     {...props}

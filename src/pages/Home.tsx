@@ -164,6 +164,8 @@ const Home = () => {
                       src={slide.image} 
                       alt={slide.title} 
                       className="w-full h-full object-cover"
+                      loading={index === 0 ? "eager" : "lazy"}
+                      decoding="async"
                     />
                     <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/70 to-transparent" />
                   </div>
@@ -216,7 +218,7 @@ const Home = () => {
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="animate-fade-in order-2 md:order-1">
-              <img src={aboutSchool} alt="Ashirwad School Building" className="rounded-2xl shadow-lg w-full card-elevated h-[500px] object-cover" />
+              <img src={aboutSchool} alt="Ashirwad School Building" loading="lazy" decoding="async" className="rounded-2xl shadow-lg w-full card-elevated h-[500px] object-cover" />
             </div>
             <div className="order-1 md:order-2">
               <h2 className="text-4xl md:text-5xl font-heading font-bold mb-6 text-primary">About Our School</h2>
@@ -278,7 +280,7 @@ const Home = () => {
             {facilities.map((facility, index) => (
               <Card key={index} className="overflow-hidden hover:shadow-lg transition-smooth card-elevated group">
                 <div className="h-48 overflow-hidden">
-                  <img src={facility.image} alt={facility.title} className="w-full h-full object-cover group-hover:scale-110 transition-smooth" />
+                  <img src={facility.image} alt={facility.title} loading="lazy" decoding="async" className="w-full h-full object-cover group-hover:scale-110 transition-smooth" />
                 </div>
                 <CardContent className="p-6">
                   <div className="flex items-center gap-3 mb-3">
@@ -316,6 +318,8 @@ const Home = () => {
                       <img 
                         src={member.image} 
                         alt={member.name} 
+                        loading="lazy"
+                        decoding="async"
                         className="w-full h-full object-cover object-top" 
                       />
                     </div>
@@ -362,6 +366,8 @@ const Home = () => {
                   <img 
                     src={teacher.image} 
                     alt={teacher.name} 
+                    loading="lazy"
+                    decoding="async"
                     className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-500" 
                   />
                 </div>
@@ -428,7 +434,7 @@ const Home = () => {
             {campusLifeActivities.map((activity, index) => (
               <Card key={index} className="overflow-hidden hover:shadow-lg transition-smooth card-elevated group">
                 <div className="h-64 overflow-hidden relative">
-                  <img src={activity.image} alt={activity.title} className="w-full h-full object-cover group-hover:scale-110 transition-smooth" />
+                  <img src={activity.image} alt={activity.title} loading="lazy" decoding="async" className="w-full h-full object-cover group-hover:scale-110 transition-smooth" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                   <div className="absolute bottom-4 left-4 right-4">
                     <h3 className="text-2xl font-heading font-bold text-white">{activity.title}</h3>
@@ -463,7 +469,7 @@ const Home = () => {
             {newsEvents.map((item, index) => (
               <Card key={index} className="overflow-hidden hover:shadow-lg transition-smooth card-elevated group">
                 <div className="h-56 overflow-hidden">
-                  <img src={item.image} alt={item.title} className="w-full h-full object-cover group-hover:scale-110 transition-smooth" />
+                  <img src={item.image} alt={item.title} loading="lazy" decoding="async" className="w-full h-full object-cover group-hover:scale-110 transition-smooth" />
                 </div>
                 <CardContent className="p-6">
                   <div className="flex items-center justify-between mb-4">
