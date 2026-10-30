@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 
 const Documents = () => {
   const documents = [
+    { title: "Mandatory Public Disclosure (SARAS 7.0)", href: "/documents/mandatory-disclosure-details.pdf?v=20261030" },
     { title: "Society Registration", href: "/documents/society-registration.pdf?v=20261012" },
     { title: "Recognition Certificate", href: "/documents/recognition-certificate.pdf?v=20261012" },
     { title: "Building Safety Certificate", href: "/documents/building-safety-certificate.pdf?v=20261012" },
