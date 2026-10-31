@@ -3,7 +3,6 @@ import { Button } from "@/components/ui/button";
 
 const Documents = () => {
   const documents = [
-    { title: "Mandatory Public Disclosure", href: "/documents/mandatory-disclosure-details.pdf?v=20261030" },
     { title: "Society Registration", href: "/documents/society-registration.pdf?v=20261012" },
     { title: "Recognition Certificate", href: "/documents/recognition-certificate.pdf?v=20261012" },
     { title: "Building Safety Certificate", href: "/documents/building-safety-certificate.pdf?v=20261012" },
@@ -15,6 +14,7 @@ const Documents = () => {
     { title: "Fee Structure", href: "/documents/fee-structure.pdf?v=20261012" },
     { title: "Self Certificate", href: "/documents/self-certification-proforma.pdf?v=20261012" },
     { title: "Academic Calendar", href: "/documents/academic-calendar.pdf?v=20261012" },
+    { title: "Mandatory Public Disclosure", href: "/documents/mandatory-disclosure-details.pdf?v=20261030" },
   ];
 
   return (
