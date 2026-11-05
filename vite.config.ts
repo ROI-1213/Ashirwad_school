@@ -22,7 +22,7 @@ export default defineConfig(({ mode }) => {
 
   return {
     server: {
-      host: "::",
+      host: "0.0.0.0",
       port: port,
       allowedHosts: allowedHosts,
       ...(proxyTarget
@@ -38,7 +38,7 @@ export default defineConfig(({ mode }) => {
         : {}),
     },
     preview: {
-      host: "::",
+      host: "0.0.0.0",
       port: port,
       allowedHosts: allowedHosts,
       ...(proxyTarget
@@ -60,6 +60,7 @@ export default defineConfig(({ mode }) => {
     resolve: {
       alias: {
         "@": path.resolve(__dirname, "./src"),
+        "react/jsx-dev-runtime": path.resolve(__dirname, "./src/jsx-runtime-fallback.ts"),
       },
     },
     define: {

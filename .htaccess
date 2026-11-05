@@ -1,23 +1,31 @@
+# Ensure LiteSpeed and Apache serve dist/index.html first
+DirectoryIndex dist/index.html index.html
+
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /
 
-  # 1. If files inside /dist/ exist, serve them directly when requested from root
+  # 1. Block direct browser access to source code and config files
+  RewriteRule ^src/ - [F,L]
+  RewriteRule ^vite\.config\. - [F,L]
+  RewriteRule ^package\.json - [F,L]
+  RewriteRule ^tsconfig\. - [F,L]
+
+  # 2. If visiting root /, serve dist/index.html
+  RewriteRule ^$ dist/index.html [L]
+
+  # 3. If file exists in dist, serve directly
   RewriteCond %{REQUEST_URI} !^/dist/
   RewriteCond %{DOCUMENT_ROOT}/dist/$1 -f [OR]
   RewriteCond %{DOCUMENT_ROOT}/dist/$1 -d
   RewriteRule ^(.*)$ dist/$1 [L]
 
-  # 2. If visiting root / and dist/index.html exists, serve dist/index.html
-  RewriteCond %{DOCUMENT_ROOT}/dist/index.html -f
-  RewriteRule ^$ dist/index.html [L]
-
-  # 3. If file or directory exists at root, serve it
+  # 4. If actual file or directory exists on disk, serve it
   RewriteCond %{REQUEST_FILENAME} -f [OR]
   RewriteCond %{REQUEST_FILENAME} -d
   RewriteRule ^ - [L]
 
-  # 4. SPA routing: route to dist/index.html if present, else index.html
+  # 5. SPA routing: route all non-file URLs to dist/index.html
   RewriteCond %{DOCUMENT_ROOT}/dist/index.html -f
   RewriteRule . dist/index.html [L]
 
