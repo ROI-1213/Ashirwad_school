@@ -9,10 +9,19 @@ export default defineConfig(({ mode }) => ({
     host: "::",
     port: 8135,
   },
-  plugins: [react(), mode === "development" && componentTagger()].filter(Boolean),
+  plugins: [
+    react(),
+    mode === "development" && process.env.NODE_ENV !== "production" && componentTagger(),
+  ].filter(Boolean),
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
     },
+  },
+  define: {
+    "process.env.NODE_ENV": JSON.stringify(mode === "production" ? "production" : "development"),
+  },
+  optimizeDeps: {
+    include: ["react", "react-dom"],
   },
 }));
